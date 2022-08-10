@@ -1,0 +1,14 @@
+<Input global="false" @value={{this.newTitle}} @enter={{fn this.addPost}} @placeholder="Enter Title"/>
+<Input @value={{this.newDescription}} @enter={{fn this.addPost}} @placeholder="Enter Description"/>
+<button type="button" onclick={{fn this.addPost}} value="Add Blog">Add Blog</button>
+
+<ul>
+    {{#each @model as |post|}}
+    <li>
+        <LinkTo @route="posts.post" @model={{post.id}}>
+            <PostView @post={{post}} @showBody={{false}}/>
+        </LinkTo>
+    </li>
+    {{/each}}
+</ul>
+{{outlet}}

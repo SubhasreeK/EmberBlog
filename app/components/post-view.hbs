@@ -1,0 +1,7 @@
+<h3>{{@post.title}}</h3>
+{{#if @showBody}}
+    <span>{{@post.formattedPublishedAt}}</span>
+    <pre style="white-space: pre-wrap;">{{@post.body}}</pre>
+    <pre style="white-space: pre-wrap;">{{@post.description}}</pre>
+    <button {{on "click" (fn this.removePost @post)}}>Remove Blog</button>
+{{/if}}
